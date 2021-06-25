@@ -1,0 +1,8 @@
+.search-bar {
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+  &__logo {
+    width: 200px;
+  }
+}

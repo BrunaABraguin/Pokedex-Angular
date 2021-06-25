@@ -4,3 +4,5 @@ class Stat {
     name: string;
   };
 }
+
+export default Stat;

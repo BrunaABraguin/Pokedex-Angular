@@ -5,3 +5,5 @@ class Ability {
 
   constructor() {}
 }
+
+export default Ability;

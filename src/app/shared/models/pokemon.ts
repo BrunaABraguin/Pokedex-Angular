@@ -1,4 +1,8 @@
-
+import Ability from './ability';
+import Specie from './specie';
+import Sprite from './sprite';
+import Stat from './stat';
+import Type from './type';
 export class Pokemon {
   id: number;
   order: number;

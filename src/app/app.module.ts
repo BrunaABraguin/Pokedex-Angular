@@ -1,3 +1,4 @@
+import { PokemonService } from './shared/services/pokemon.service';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
@@ -11,20 +12,16 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PokemonListComponent,
-    PokemonComponent
-  ],
+  declarations: [AppComponent, PokemonListComponent, PokemonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PokemonService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
