@@ -7,3 +7,5 @@ export class PokemonList {
     this.url = "";
   }
 }
+
+export default PokemonList;

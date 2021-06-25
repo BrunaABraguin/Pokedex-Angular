@@ -1,8 +1,25 @@
-.search-bar {
-  @media (max-width: 1024px) {
-    justify-content: center;
+.search {
+  @media (max-width: 767px) {
+    justify-content: space-between;
   }
-  &__logo {
-    width: 200px;
+  &__bar {
+    width: 37%;
+
+    &--logo {
+      width: 12.5rem;
+
+      @media (max-width: 768px) {
+        width: 10rem;
+      }
+    }
+
+    &--input {
+      width: 30%;
+      font-size: 1rem;
+      mat-icon {
+        position: absolute;
+        right: 0;
+      }
+    }
   }
 }
