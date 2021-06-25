@@ -1,0 +1,3 @@
+class Specie {
+  url: string;
+}

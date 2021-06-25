@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/helpers/colors.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-weight: 1rem;
+  line-height: 1.6;
+}
+body {
+  margin: 0;
+  font-family: "Flexo-Demi", Roboto, "Helvetica Neue", sans-serif;
+  background: $bg-primary-color;
+  background: linear-gradient(to right, $bg-primary-color, $bg-secondary-color);
+}
