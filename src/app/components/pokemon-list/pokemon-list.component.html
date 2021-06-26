@@ -1,11 +1,26 @@
 <section class="pokemon">
   <section *ngFor="let pokemon of pokemons" class="pokemon__item">
+    <p class="pokemon__item--name text-capitalize">{{ pokemon.name }}</p>
     <div class="pokemon__item--card">
       <img src="{{ pokemonImage }}{{ pokemon.id }}.svg" />
     </div>
-    <p>{{ pokemon.name }}</p>
-    <p>{{ pokemon.types[0]?.type.name }}</p>
-    <p>{{ pokemon.types[1]?.type.name }}</p>
+    <div class="d-flex position-absolute pokemon__item--types">
+      <div class="pokemon__item--type">
+        <img
+          src="../../../assets/icons/{{ pokemon.types[0]?.type.name }}.png"
+          alt="{{ pokemon.types[0]?.type.name }}"
+        />
+      </div>
+      <div
+        class="pokemon__item--type"
+        *ngIf="pokemon.types[1]?.type.name"
+      >
+        <img
+          src="../../../assets/icons/{{ pokemon.types[1]?.type.name }}.png"
+          alt="{{ pokemon.types[1]?.type.name }}"
+        />
+      </div>
+    </div>
   </section>
 </section>
 

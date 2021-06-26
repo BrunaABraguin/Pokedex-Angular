@@ -17,7 +17,8 @@ body {
 
 body {
   margin: 0;
-  font-family: "Flexo-Demi", Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Flexo-Regular", "Flexo-Demi", Roboto, "Helvetica Neue",
+    sans-serif;
   background: $bg-primary-color;
   background: linear-gradient(to right, $bg-primary-color, $bg-secondary-color);
 }
