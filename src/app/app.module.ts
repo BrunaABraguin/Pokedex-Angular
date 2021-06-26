@@ -19,7 +19,7 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    SharedModule,
+    SharedModule
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent],
