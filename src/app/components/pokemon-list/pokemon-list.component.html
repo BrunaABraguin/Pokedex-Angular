@@ -1,6 +1,11 @@
 <section class="pokemon">
   <section *ngFor="let pokemon of pokemons" class="pokemon__item">
-    <p class="pokemon__item--name text-capitalize">{{ pokemon.name }}</p>
+    <div class="d-flex justify-content-between pokemon__item--name">
+      <span> #{{ pokemon.id }} </span>
+      <span class="text-capitalize w-100 pr-4">
+        {{ pokemon.name }}
+      </span>
+    </div>
     <div class="pokemon__item--card">
       <img src="{{ pokemonImage }}{{ pokemon.id }}.svg" />
     </div>
