@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   pokeApiURL: 'https://pokeapi.co/api/v2/',
+  pokemonImageURL:
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/',
 };
 
 /*

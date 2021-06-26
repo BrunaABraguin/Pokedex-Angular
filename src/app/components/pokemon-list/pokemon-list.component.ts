@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PokemonService } from './../../shared/services/pokemon.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,8 +13,8 @@ import { forkJoin, Observable } from 'rxjs';
 })
 export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[] = [];
-
-  private offset: number;
+  pokemonImage = environment.pokemonImageURL;
+  offset: number;
   isLastPage = false;
 
   constructor(
@@ -59,6 +60,5 @@ export class PokemonListComponent implements OnInit {
   morePokemons(): void {
     this.getPagination(this.offset);
     console.log(this.offset);
-
   }
 }
