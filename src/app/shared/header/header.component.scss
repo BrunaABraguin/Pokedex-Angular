@@ -1,5 +1,5 @@
 .search {
-  height: 80px;
+  height: 5rem;
   @media (max-width: 767px) {
     justify-content: space-between;
   }
@@ -9,7 +9,7 @@
     &--logo {
       width: 17rem;
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         width: 10rem;
       }
     }
