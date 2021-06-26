@@ -8,7 +8,7 @@
   </section>
   <mat-form-field class="search__bar--input">
     <mat-label>Pokémon</mat-label>
-    <input matInput />
+    <input matInput [formControl]="searchParam" (keydown.enter)="onSearchPokemon()"/>
     <mat-icon>search</mat-icon>
   </mat-form-field>
 </mat-toolbar>
