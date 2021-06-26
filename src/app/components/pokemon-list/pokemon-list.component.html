@@ -11,10 +11,7 @@
           alt="{{ pokemon.types[0]?.type.name }}"
         />
       </div>
-      <div
-        class="pokemon__item--type"
-        *ngIf="pokemon.types[1]?.type.name"
-      >
+      <div class="pokemon__item--type" *ngIf="pokemon.types[1]?.type.name">
         <img
           src="../../../assets/icons/{{ pokemon.types[1]?.type.name }}.png"
           alt="{{ pokemon.types[1]?.type.name }}"
@@ -24,4 +21,13 @@
   </section>
 </section>
 
-<button (click)="morePokemons()">More</button>
+<div class="show__more">
+  <button
+    mat-flat-button
+    (click)="morePokemons()"
+    color="warn"
+    class="show__more--button text-uppercase"
+  >
+    Carregar mais
+  </button>
+</div>
