@@ -1,0 +1,42 @@
+.pokemon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 75%;
+  margin: 3.75rem auto;
+
+  &__item {
+    width: 25rem;
+    display: grid;
+    margin-bottom: 2.5rem;
+    background-color: white;
+    border-radius: 1.25rem;
+    border: 0.625rem solid black;
+    padding: 0.625rem 1.25rem;
+    box-shadow: 0 0.1875rem 0.5rem rgb(0 0 0 / 70%);
+
+    &:hover{
+      transform: scale(1.05);
+      transition: all 0.3s ease-out;
+    }
+
+    &--card {
+      height: 22.5rem;
+      display: flex;
+      vertical-align: middle;
+      border: 0.3125rem solid black;
+      border-radius: 0.625rem;
+      margin-bottom: 1.875rem;
+      background-color: #F2F2F2;
+
+
+      img {
+        width: 80%;
+        height: 22rem;
+        margin: 0 auto;
+      }
+    }
+  }
+}
