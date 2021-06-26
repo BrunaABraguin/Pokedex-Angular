@@ -1,7 +1,7 @@
 <section *ngFor="let pokemon of pokemons">
   <img src="{{ pokemonImage }}{{ pokemon.id }}.svg" />
   <p>{{ pokemon.name }}</p>
-  <p>{{ pokemon.types[0].type.name }}</p>
-  <p>{{ pokemon.types[1].type.name }}</p>
+  <p>{{ pokemon.types[0]?.type.name }}</p>
+  <p>{{ pokemon.types[1]?.type.name }}</p>
 </section>
 <button (click)="morePokemons()">More</button>
