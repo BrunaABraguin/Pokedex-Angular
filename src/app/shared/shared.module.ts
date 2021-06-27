@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './../material.module';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
+import { PokemonListComponent } from '../components/pokemon-list/pokemon-list.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [PokemonListComponent],
   imports: [MaterialModule, CommonModule, FormsModule, ReactiveFormsModule],
-  exports: [HeaderComponent],
+  exports: [PokemonListComponent],
 })
 export class SharedModule {}

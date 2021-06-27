@@ -18,15 +18,18 @@ export class PokemonListComponent implements OnInit {
   isLastPage = false;
 
   searchParam: FormControl = new FormControl('');
+  isSearching: boolean;
+  pokemonIDName: number | string;
+  searchPokemon = new Pokemon();
+  messageError: string;
 
-  constructor(
-    private pokemonService: PokemonService
-  ) {
+  constructor(private pokemonService: PokemonService) {
     this.offset = 0;
   }
 
   ngOnInit(): void {
     this.getPagination(this.offset);
+    this.isSearching = false;
   }
 
   getPagination(offset: number) {
@@ -64,7 +67,23 @@ export class PokemonListComponent implements OnInit {
   }
 
   onSearchPokemon() {
-    const pokemonIDName = this.searchParam.value.trim().toLowerCase();
-    console.log(pokemonIDName);
+    try {
+      this.pokemonIDName = this.searchParam.value.trim().toLowerCase();
+      this.pokemonService.getPokemon(this.pokemonIDName).subscribe(
+        (data) => ((this.searchPokemon = data), (this.isSearching = true)),
+        (error: any) => {
+          if (error.status == 404) {
+            this.isSearching = false;
+            this.messageError = 'Não encontrado';
+            console.log('Error 404');
+          }
+        }
+      );
+    } catch (error) {
+      console.log(error.status);
+      if (error.status === 404) {
+        console.log('Not found');
+      }
+    }
   }
 }
