@@ -6,25 +6,27 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
-  styleUrls: ['./pokemon.component.scss']
+  styleUrls: ['./pokemon.component.scss'],
 })
 export class PokemonComponent implements OnInit {
   pokemon: Pokemon;
 
-  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private pokemonService: PokemonService
+  ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      let id = +params.get("id");
-      console.log(id);
-
-      this.pokemonService.getPokemon(id).subscribe(data => {
-        this.pokemon = data;
-        console.log(this.pokemon);
-
-      })
-
-    })
+    this.getPokemonStats();
   }
 
+  getPokemonStats(): void {
+    this.route.paramMap.subscribe((params) => {
+      let id = +params.get('id');
+
+      this.pokemonService.getPokemon(id).subscribe((data) => {
+        this.pokemon = data;
+      });
+    });
+  }
 }

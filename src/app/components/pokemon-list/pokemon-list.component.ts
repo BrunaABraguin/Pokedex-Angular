@@ -43,7 +43,6 @@ export class PokemonListComponent implements OnInit {
           }
           if (!this.isLastPage) {
             this.getPokemonDetail(list);
-            console.log(list);
           }
         });
     }
@@ -58,16 +57,14 @@ export class PokemonListComponent implements OnInit {
     forkJoin([...arr]).subscribe((pokemons: []) => {
       this.pokemons.push(...pokemons);
       this.offset += 9;
-      console.log(this.pokemons);
     });
   }
 
   morePokemons(): void {
     this.getPagination(this.offset);
-    console.log(this.offset);
   }
 
-  onSearchPokemon() {
+  onFilterPokemon() {
     this.pokemonIDName = this.searchParam.value.trim().toLowerCase();
     this.pokemonService.getPokemon(this.pokemonIDName).subscribe(
       (data) => ((this.searchPokemon = data), (this.isSearching = true)),
@@ -75,7 +72,6 @@ export class PokemonListComponent implements OnInit {
         if (error.status == 404) {
           this.isSearching = false;
           this.messageError = 'Não encontrado';
-          console.log('Error 404');
           console.clear();
         }
       }
