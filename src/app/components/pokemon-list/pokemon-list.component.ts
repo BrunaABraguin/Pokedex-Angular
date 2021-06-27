@@ -5,6 +5,7 @@ import { Pokemon } from 'src/app/shared/models/pokemon';
 import { PokemonList } from 'src/app/shared/models/pokemon-list';
 import { forkJoin, Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -23,7 +24,7 @@ export class PokemonListComponent implements OnInit {
   searchPokemon = new Pokemon();
   messageError: string;
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private pokemonService: PokemonService, private router: Router) {
     this.offset = 0;
   }
 
@@ -80,4 +81,8 @@ export class PokemonListComponent implements OnInit {
       }
     );
   }
+
+  pokemonDetails(id: number){
+      this.router.navigate(['/',id]);
+  };
 }
