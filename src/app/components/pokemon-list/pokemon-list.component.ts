@@ -67,23 +67,17 @@ export class PokemonListComponent implements OnInit {
   }
 
   onSearchPokemon() {
-    try {
-      this.pokemonIDName = this.searchParam.value.trim().toLowerCase();
-      this.pokemonService.getPokemon(this.pokemonIDName).subscribe(
-        (data) => ((this.searchPokemon = data), (this.isSearching = true)),
-        (error: any) => {
-          if (error.status == 404) {
-            this.isSearching = false;
-            this.messageError = 'Não encontrado';
-            console.log('Error 404');
-          }
+    this.pokemonIDName = this.searchParam.value.trim().toLowerCase();
+    this.pokemonService.getPokemon(this.pokemonIDName).subscribe(
+      (data) => ((this.searchPokemon = data), (this.isSearching = true)),
+      (error: any) => {
+        if (error.status == 404) {
+          this.isSearching = false;
+          this.messageError = 'Não encontrado';
+          console.log('Error 404');
+          console.clear();
         }
-      );
-    } catch (error) {
-      console.log(error.status);
-      if (error.status === 404) {
-        console.log('Not found');
       }
-    }
+    );
   }
 }
