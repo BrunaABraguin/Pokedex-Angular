@@ -1,4 +1,18 @@
-<app-header></app-header>
+<mat-toolbar class="search">
+  <section class="search__bar">
+    <img
+      class="search__bar--logo"
+      src="../assets/images/pokedex-logo.png"
+      alt="Pokédex Logo"
+    />
+  </section>
+  <mat-form-field class="search__bar--input">
+    <mat-label>Pokémon</mat-label>
+    <input matInput [formControl]="searchParam" (keydown.enter)="onSearchPokemon()"/>
+    <mat-icon>search</mat-icon>
+  </mat-form-field>
+</mat-toolbar>
+
 <section class="pokemon">
   <section *ngFor="let pokemon of pokemons" class="pokemon__item">
     <div class="d-flex justify-content-between pokemon__item--name">

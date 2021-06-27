@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/shared/models/pokemon';
 import { PokemonList } from 'src/app/shared/models/pokemon-list';
 import { forkJoin, Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -16,6 +17,8 @@ export class PokemonListComponent implements OnInit {
   pokemonImage = environment.pokemonImageURL;
   offset: number;
   isLastPage = false;
+
+  searchParam: FormControl = new FormControl('');
 
   constructor(
     private pokemonService: PokemonService,
@@ -60,5 +63,10 @@ export class PokemonListComponent implements OnInit {
   morePokemons(): void {
     this.getPagination(this.offset);
     console.log(this.offset);
+  }
+
+  onSearchPokemon() {
+    const pokemonIDName = this.searchParam.value.trim().toLowerCase();
+    console.log(pokemonIDName);
   }
 }

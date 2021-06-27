@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, PokemonListComponent, PokemonComponent],
@@ -19,7 +20,8 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent],
