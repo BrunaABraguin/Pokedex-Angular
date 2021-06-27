@@ -1,5 +1,4 @@
 import { environment } from './../../../environments/environment.prod';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PokemonService } from './../../shared/services/pokemon.service';
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/shared/models/pokemon';
@@ -21,8 +20,7 @@ export class PokemonListComponent implements OnInit {
   searchParam: FormControl = new FormControl('');
 
   constructor(
-    private pokemonService: PokemonService,
-    private snackBar: MatSnackBarModule
+    private pokemonService: PokemonService
   ) {
     this.offset = 0;
   }
