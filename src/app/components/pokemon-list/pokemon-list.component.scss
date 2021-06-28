@@ -33,6 +33,10 @@
       margin-bottom: 1.875rem;
       background-color: #d7d8d9;
 
+      @media (max-width: 1024px) {
+        height: 18.5rem;
+      }
+
       img {
         width: 100%;
         margin: 0 auto;
