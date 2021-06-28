@@ -39,7 +39,7 @@
     </section>
     <section class="d-flex justify-content-center flex-column bg-white">
       <img
-        src="{{ pokemonImage }}{{ pokemon?.id }}.svg"
+        src="{{ pokemonImage }}{{ pokemon?.id }}.png"
         alt="{{ pokemon?.name }}"
       />
     </section>
@@ -104,14 +104,14 @@
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{
-                    evolutionChain?.chain.evolves_to[0]?.species?.name
+                    evolutionChain?.chain?.evolves_to[0]?.species?.name
                   }}.gif"
-                  alt="{{ evolutionChain?.chain.evolves_to[0]?.species?.name }}"
+                  alt="{{ evolutionChain?.chain?.evolves_to[0]?.species?.name }}"
                 />
               </div>
               <div class="h-25 d-flex justify-content-center">
                 <p class="text-capitalize">
-                  {{ evolutionChain?.chain.evolves_to[0]?.species?.name }}
+                  {{ evolutionChain?.chain?.evolves_to[0]?.species?.name }}
                 </p>
               </div>
             </div>
@@ -119,11 +119,11 @@
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{
-                    evolutionChain?.chain.evolves_to[0].evolves_to[0]?.species
+                    evolutionChain?.chain?.evolves_to[0]?.evolves_to[0]?.species
                       ?.name
                   }}.gif"
                   alt="{{
-                    evolutionChain?.chain.evolves_to[0].evolves_to[0]?.species
+                    evolutionChain?.chain?.evolves_to[0]?.evolves_to[0]?.species
                       ?.name
                   }}"
                 />
@@ -131,7 +131,7 @@
               <div class="h-25 d-flex justify-content-center">
                 <p class="text-capitalize">
                   {{
-                    evolutionChain?.chain.evolves_to[0].evolves_to[0]?.species
+                    evolutionChain?.chain?.evolves_to[0]?.evolves_to[0]?.species
                       ?.name
                   }}
                 </p>

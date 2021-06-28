@@ -34,15 +34,10 @@ export class PokemonComponent implements OnInit {
         this.pokemon = data;
         this.pokemonService.getSpecies(this.pokemon.name).subscribe((data) => {
           this.species = data;
-
-          console.log(this.species);
-
           this.pokemonService
             .getEvolutions(this.species.evolution_chain.url)
             .subscribe((data) => {
               this.evolutionChain = data;
-
-              console.log(this.evolutionChain);
             });
         });
       });

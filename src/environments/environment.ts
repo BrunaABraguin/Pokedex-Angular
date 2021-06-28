@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   pokeApiURL: 'https://pokeapi.co/api/v2/',
   pokemonImageURL:
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/',
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/',
   pokemonEvolution: 'https://pokeapi.co/api/v2/evolution-chain/',
   pokemonSpecies: 'https://pokeapi.co/api/v2/pokemon-species/',
   pokemon3D: 'https://projectpokemon.org/images/normal-sprite/',
