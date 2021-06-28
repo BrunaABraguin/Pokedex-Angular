@@ -103,3 +103,20 @@
     }
   }
 }
+
+.not-found {
+  color: white;
+  line-height: 2.5rem;
+  width: 50%;
+  background-color: black;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 1.25rem auto;
+  padding: 0.625rem 1.25rem;
+  border-radius: 1.25rem;
+  text-align: center;
+
+  mat-icon{
+    margin-top: 10px;
+  }
+}

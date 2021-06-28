@@ -16,14 +16,19 @@
     <mat-icon>search</mat-icon>
   </mat-form-field>
 </mat-toolbar>
-<p>{{ messageError }}</p>
+<app-loading *ngIf="isLoading"></app-loading>
+<div class="not-found d-flex justify-content-between" *ngIf="messageError">
+  <p>{{ messageError }}</p>
+  <mat-icon (click)="closeError()">close</mat-icon>
+</div>
 <section class="pokemon">
   <section
     *ngFor="let pokemon of pokemons"
     class="pokemon__item"
     [ngClass]="{
       hidden: isSearching
-    }" (click)="pokemonDetails(pokemon.id);"
+    }"
+    (click)="pokemonDetails(pokemon.id)"
   >
     <div class="d-flex justify-content-between pokemon__item--name">
       <span> #{{ pokemon.id }} </span>
@@ -49,7 +54,11 @@
       </div>
     </div>
   </section>
-  <section *ngIf="searchPokemon.id" class="pokemon__item" (click)="pokemonDetails(searchPokemon.id)">
+  <section
+    *ngIf="searchPokemon.id"
+    class="pokemon__item"
+    (click)="pokemonDetails(searchPokemon.id)"
+  >
     <div class="d-flex justify-content-between pokemon__item--name">
       <span> #{{ searchPokemon.id }} </span>
       <span class="text-capitalize w-100 pr-4">
@@ -85,6 +94,7 @@
 </section>
 
 <div
+  *ngIf="!isLoading"
   class="show__more"
   [ngClass]="{
     hidden: isSearching

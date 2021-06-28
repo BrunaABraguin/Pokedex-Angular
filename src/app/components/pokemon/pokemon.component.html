@@ -8,7 +8,15 @@
       <h1 class="text-uppercase text-center pokemon__header--name">
         {{ pokemon?.name }}
       </h1>
-      <div class="d-flex pokemon__header--types position-absolute justify-content-center w-100">
+      <div
+        class="
+          d-flex
+          pokemon__header--types
+          position-absolute
+          justify-content-center
+          w-100
+        "
+      >
         <div
           class="pokemon__header--type"
           *ngIf="pokemon?.types[0]?.type?.name"
@@ -77,7 +85,7 @@
         ></mat-tab>
         <mat-tab label="Evoluções">
           <div class="row pokemon__description--evolutions">
-            <div class="col-lg-3">
+            <div class="col-lg-3 pokemon__description--evolution">
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{
@@ -92,7 +100,7 @@
                 </p>
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 pokemon__description--evolution">
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{

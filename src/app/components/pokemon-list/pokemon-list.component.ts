@@ -20,6 +20,7 @@ export class PokemonListComponent implements OnInit {
 
   searchParam: FormControl = new FormControl('');
   isSearching: boolean;
+  isLoading: boolean;
   pokemonIDName: number | string;
   searchPokemon = new Pokemon();
   messageError: string;
@@ -29,11 +30,14 @@ export class PokemonListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPagination(this.offset);
-    this.isSearching = false;
+    this.isLoading = true;
+    setTimeout(() => {
+      this.getPagination(this.offset);
+      this.isSearching = false;
+    }, 1000);
   }
 
-  getPagination(offset: number) {
+  async getPagination(offset: number) {
     if (!this.isLastPage) {
       this.pokemonService
         .getPokemons(offset)
@@ -46,6 +50,8 @@ export class PokemonListComponent implements OnInit {
           }
         });
     }
+
+    this.isLoading = false;
   }
 
   getPokemonDetail(list: PokemonList[]) {
@@ -67,11 +73,15 @@ export class PokemonListComponent implements OnInit {
   onFilterPokemon() {
     this.pokemonIDName = this.searchParam.value.trim().toLowerCase();
     this.pokemonService.getPokemon(this.pokemonIDName).subscribe(
-      (data) => ((this.searchPokemon = data), (this.isSearching = true)),
+      (data) => {
+        this.searchPokemon = data;
+        this.isSearching = true;
+        this.messageError = '';
+      },
       (error: any) => {
         if (error.status == 404) {
           this.isSearching = false;
-          this.messageError = 'Não encontrado';
+          this.messageError = 'Que estranho! Não encontramos esse pokémon...';
           console.clear();
         }
       }
@@ -80,5 +90,9 @@ export class PokemonListComponent implements OnInit {
 
   pokemonDetails(id: number) {
     this.router.navigate(['/', id]);
+  }
+
+  closeError() {
+    this.messageError = '';
   }
 }

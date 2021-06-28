@@ -6,9 +6,10 @@ import { PokemonListComponent } from '../components/pokemon-list/pokemon-list.co
 import { RouterModule } from '@angular/router';
 import { PokemonComponent } from '../components/pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
-  declarations: [PokemonListComponent, PokemonComponent],
+  declarations: [PokemonListComponent, PokemonComponent, LoadingComponent],
   imports: [
     MaterialModule,
     CommonModule,

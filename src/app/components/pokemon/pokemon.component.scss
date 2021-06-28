@@ -71,7 +71,7 @@ mat-icon.home {
       margin-left: 2rem;
       width: 20%;
 
-      @media (max-width: 426px) {
+      @media (max-width: 1024px) {
         margin: 0;
         width: 100%;
       }
@@ -96,6 +96,12 @@ mat-icon.home {
 
     &--evolutions {
       margin-top: 3rem;
+    }
+
+    &--evolution {
+      @media (max-width: 1024px) {
+        margin-bottom: 4.375rem;
+      }
     }
   }
 }
