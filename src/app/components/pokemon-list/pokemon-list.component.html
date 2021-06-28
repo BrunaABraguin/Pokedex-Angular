@@ -2,7 +2,7 @@
   <section class="search__bar">
     <img
       class="search__bar--logo"
-      src="../assets/images/pokedex-logo.png"
+      src="assets/images/pokedex-logo.png"
       alt="Pokédex Logo"
     />
   </section>
@@ -42,13 +42,13 @@
     <div class="d-flex position-absolute pokemon__item--types">
       <div class="pokemon__item--type">
         <img
-          src="../../../assets/icons/{{ pokemon.types[0]?.type.name }}.png"
+          src="assets/icons/{{ pokemon.types[0]?.type.name }}.png"
           alt="{{ pokemon.types[0]?.type.name }}"
         />
       </div>
       <div class="pokemon__item--type" *ngIf="pokemon.types[1]?.type.name">
         <img
-          src="../../../assets/icons/{{ pokemon.types[1]?.type.name }}.png"
+          src="assets/icons/{{ pokemon.types[1]?.type.name }}.png"
           alt="{{ pokemon.types[1]?.type.name }}"
         />
       </div>
@@ -72,7 +72,7 @@
       <div class="pokemon__item--type">
         <img
           *ngIf="searchPokemon.id"
-          src="../../../assets/icons/{{
+          src="assets/icons/{{
             searchPokemon.types[0]?.type.name
           }}.png"
           alt="{{ searchPokemon.types[0]?.type.name }}"
@@ -83,7 +83,7 @@
         *ngIf="searchPokemon.types[1]?.type.name"
       >
         <img
-          src="../../../assets/icons/{{
+          src="assets/icons/{{
             searchPokemon.types[1]?.type.name
           }}.png"
           alt="{{ searchPokemon.types[1]?.type.name }}"
