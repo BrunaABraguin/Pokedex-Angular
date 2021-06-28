@@ -78,7 +78,7 @@ export class PokemonListComponent implements OnInit {
     );
   }
 
-  pokemonDetails(id: number){
-      this.router.navigate(['/',id]);
-  };
+  pokemonDetails(id: number) {
+    this.router.navigate(['/', id]);
+  }
 }

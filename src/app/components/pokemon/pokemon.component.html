@@ -56,8 +56,8 @@
               <div>{{ pokemon?.weight / 10 }} kg</div>
               <div>{{ pokemon?.height / 10 }} m</div>
               <div class="text-capitalize">
-                {{ pokemon?.abilities[0].ability?.name }}
-                {{ pokemon?.abilities[1].ability?.name }}
+                {{ pokemon?.abilities[0]?.ability?.name }}
+                {{ pokemon?.abilities[1]?.ability?.name }}
               </div>
             </div>
           </div>
@@ -81,14 +81,14 @@
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{
-                    evolutionChain?.chain.species?.name
+                    evolutionChain?.chain?.species?.name
                   }}.gif"
-                  alt="{{ evolutionChain?.chain.species?.name }}"
+                  alt="{{ evolutionChain?.chain?.species?.name }}"
                 />
               </div>
               <div class="h-25 d-flex justify-content-center">
                 <p class="text-capitalize">
-                  {{ evolutionChain?.chain.species?.name }}
+                  {{ evolutionChain?.chain?.species?.name }}
                 </p>
               </div>
             </div>
@@ -96,14 +96,14 @@
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{
-                    evolutionChain?.chain.evolves_to[0].species?.name
+                    evolutionChain?.chain.evolves_to[0]?.species?.name
                   }}.gif"
-                  alt="{{ evolutionChain?.chain.evolves_to[0].species?.name }}"
+                  alt="{{ evolutionChain?.chain.evolves_to[0]?.species?.name }}"
                 />
               </div>
               <div class="h-25 d-flex justify-content-center">
                 <p class="text-capitalize">
-                  {{ evolutionChain?.chain.evolves_to[0].species?.name }}
+                  {{ evolutionChain?.chain.evolves_to[0]?.species?.name }}
                 </p>
               </div>
             </div>
@@ -111,11 +111,11 @@
               <div class="h-75 d-flex justify-content-center">
                 <img
                   src="{{ pokemon3D }}{{
-                    evolutionChain?.chain.evolves_to[0].evolves_to[0].species
+                    evolutionChain?.chain.evolves_to[0].evolves_to[0]?.species
                       ?.name
                   }}.gif"
                   alt="{{
-                    evolutionChain?.chain.evolves_to[0].evolves_to[0].species
+                    evolutionChain?.chain.evolves_to[0].evolves_to[0]?.species
                       ?.name
                   }}"
                 />
@@ -123,7 +123,7 @@
               <div class="h-25 d-flex justify-content-center">
                 <p class="text-capitalize">
                   {{
-                    evolutionChain?.chain.evolves_to[0].evolves_to[0].species
+                    evolutionChain?.chain.evolves_to[0].evolves_to[0]?.species
                       ?.name
                   }}
                 </p>
