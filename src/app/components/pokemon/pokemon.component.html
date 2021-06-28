@@ -1,9 +1,9 @@
-<section class="d-flex h-100">
+<section class="row h-100">
   <mat-icon class="home position-absolute" [routerLink]="['/']"
     >keyboard_backspace</mat-icon
   >
 
-  <header class="pokemon__header bg-white">
+  <header class="pokemon__header bg-white col-lg-6">
     <section>
       <h1 class="text-uppercase text-center pokemon__header--name">
         {{ pokemon?.name }}
@@ -36,7 +36,7 @@
       </div>
     </section>
   </header>
-  <main class="pokemon__description bg-white">
+  <main class="pokemon__description bg-white col-lg-6">
     <section class="pokemon__description--infos bg-dark">
       <mat-tab-group dynamicHeight>
         <mat-tab label="Sobre">
@@ -76,35 +76,60 @@
             </div></div
         ></mat-tab>
         <mat-tab label="Evoluções">
-          <img
-            src="{{ pokemon3D }}{{ evolutionChain?.chain.species?.name }}.gif"
-            alt="{{ evolutionChain?.chain.species?.name }}"
-          />
-          <p class="text-capitalize">
-            {{ evolutionChain?.chain.species?.name }}
-          </p>
-          <img
-            src="{{ pokemon3D }}{{
-              evolutionChain?.chain.evolves_to[0].species?.name
-            }}.gif"
-            alt="{{ evolutionChain?.chain.evolves_to[0].species?.name }}"
-          />
-          <p class="text-capitalize">
-            {{ evolutionChain?.chain.evolves_to[0].species?.name }}
-          </p>
-          <img
-            src="{{ pokemon3D }}{{
-              evolutionChain?.chain.evolves_to[0].evolves_to[0].species?.name
-            }}.gif"
-            alt="{{
-              evolutionChain?.chain.evolves_to[0].evolves_to[0].species?.name
-            }}"
-          />
-          <p class="text-capitalize">
-            {{
-              evolutionChain?.chain.evolves_to[0].evolves_to[0].species?.name
-            }}
-          </p>
+          <div class="row pokemon__description--evolutions">
+            <div class="col-lg-3">
+              <div class="h-75 d-flex justify-content-center">
+                <img
+                  src="{{ pokemon3D }}{{
+                    evolutionChain?.chain.species?.name
+                  }}.gif"
+                  alt="{{ evolutionChain?.chain.species?.name }}"
+                />
+              </div>
+              <div class="h-25 d-flex justify-content-center">
+                <p class="text-capitalize">
+                  {{ evolutionChain?.chain.species?.name }}
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="h-75 d-flex justify-content-center">
+                <img
+                  src="{{ pokemon3D }}{{
+                    evolutionChain?.chain.evolves_to[0].species?.name
+                  }}.gif"
+                  alt="{{ evolutionChain?.chain.evolves_to[0].species?.name }}"
+                />
+              </div>
+              <div class="h-25 d-flex justify-content-center">
+                <p class="text-capitalize">
+                  {{ evolutionChain?.chain.evolves_to[0].species?.name }}
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="h-75 d-flex justify-content-center">
+                <img
+                  src="{{ pokemon3D }}{{
+                    evolutionChain?.chain.evolves_to[0].evolves_to[0].species
+                      ?.name
+                  }}.gif"
+                  alt="{{
+                    evolutionChain?.chain.evolves_to[0].evolves_to[0].species
+                      ?.name
+                  }}"
+                />
+              </div>
+              <div class="h-25 d-flex justify-content-center">
+                <p class="text-capitalize">
+                  {{
+                    evolutionChain?.chain.evolves_to[0].evolves_to[0].species
+                      ?.name
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
         </mat-tab>
       </mat-tab-group>
     </section>
