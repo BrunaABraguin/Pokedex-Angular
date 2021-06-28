@@ -76,12 +76,30 @@
             </div></div
         ></mat-tab>
         <mat-tab label="Evoluções">
+          <img
+            src="{{ pokemon3D }}{{ evolutionChain?.chain.species?.name }}.gif"
+            alt="{{ evolutionChain?.chain.species?.name }}"
+          />
           <p class="text-capitalize">
             {{ evolutionChain?.chain.species?.name }}
           </p>
+          <img
+            src="{{ pokemon3D }}{{
+              evolutionChain?.chain.evolves_to[0].species?.name
+            }}.gif"
+            alt="{{ evolutionChain?.chain.evolves_to[0].species?.name }}"
+          />
           <p class="text-capitalize">
             {{ evolutionChain?.chain.evolves_to[0].species?.name }}
           </p>
+          <img
+            src="{{ pokemon3D }}{{
+              evolutionChain?.chain.evolves_to[0].evolves_to[0].species?.name
+            }}.gif"
+            alt="{{
+              evolutionChain?.chain.evolves_to[0].evolves_to[0].species?.name
+            }}"
+          />
           <p class="text-capitalize">
             {{
               evolutionChain?.chain.evolves_to[0].evolves_to[0].species?.name

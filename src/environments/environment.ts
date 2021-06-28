@@ -9,6 +9,7 @@ export const environment = {
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/',
   pokemonEvolution: 'https://pokeapi.co/api/v2/evolution-chain/',
   pokemonSpecies: 'https://pokeapi.co/api/v2/pokemon-species/',
+  pokemon3D: 'https://projectpokemon.org/images/normal-sprite/',
 };
 
 /*

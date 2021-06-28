@@ -49,7 +49,7 @@
       </div>
     </div>
   </section>
-  <section *ngIf="searchPokemon.id" class="pokemon__item">
+  <section *ngIf="searchPokemon.id" class="pokemon__item" (click)="pokemonDetails(searchPokemon.id)">
     <div class="d-flex justify-content-between pokemon__item--name">
       <span> #{{ searchPokemon.id }} </span>
       <span class="text-capitalize w-100 pr-4">

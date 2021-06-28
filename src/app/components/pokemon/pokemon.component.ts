@@ -15,6 +15,7 @@ export class PokemonComponent implements OnInit {
   pokemonImage = environment.pokemonImageURL;
   evolutionChain: EvolutionChain;
   species: Species;
+  pokemon3D = environment.pokemon3D;
 
   constructor(
     private route: ActivatedRoute,
