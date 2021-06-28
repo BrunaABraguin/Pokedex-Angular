@@ -1,0 +1,76 @@
+<section class="d-flex h-100">
+  <mat-icon class="home position-absolute" [routerLink]="['/']"
+    >keyboard_backspace</mat-icon
+  >
+
+  <header class="pokemon__header bg-white">
+    <section>
+      <h1 class="text-uppercase text-center pokemon__header--name">
+        {{ pokemon.name }}
+      </h1>
+    </section>
+    <section class="d-flex justify-content-center flex-column bg-white">
+      <img
+        src="{{ pokemonImage }}{{ pokemon.id }}.svg"
+        alt="{{ pokemon.name }}"
+      />
+      <div class="d-flex pokemon__header--types">
+        <div class="pokemon__header--type">
+          <img
+            src="../../../assets/icons/{{ pokemon.types[0]?.type.name }}.png"
+            alt="{{ pokemon.types[0]?.type.name }}"
+          />
+        </div>
+        <div class="pokemon__header--type" *ngIf="pokemon.types[1]?.type.name">
+          <img
+            src="../../../assets/icons/{{ pokemon.types[1]?.type.name }}.png"
+            alt="{{ pokemon.types[1]?.type.name }}"
+          />
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class="pokemon__description bg-white">
+    <section class="pokemon__description--infos bg-dark">
+      <mat-tab-group dynamicHeight>
+        <mat-tab label="Sobre">
+          <div class="row w-75 pokemon__description--about">
+            <div class="col-lg-3">
+              <div>
+                <strong>Experiência: </strong>
+              </div>
+              <div><strong>Peso: </strong></div>
+              <div><strong>Altura: </strong></div>
+              <div><strong>Habilidades: </strong></div>
+            </div>
+            <div class="col-lg-6">
+              <div>
+                {{ pokemon.base_experience }}
+              </div>
+              <div>{{ pokemon.weight / 10 }} kg</div>
+              <div>{{ pokemon.height / 10 }} m</div>
+              <div class="text-capitalize">
+                {{ pokemon.abilities[0].ability.name }}
+                {{ pokemon.abilities[1].ability.name }}
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Estatísticas">
+          <div class="pokemon__description--stats">
+            <div *ngFor="let stat of pokemon.stats">
+              <div class="pokemon__description--stat">
+                <strong class="text-uppercase"> {{ stat.stat.name }}: </strong>
+                {{ stat.base_stat }}
+                <mat-progress-bar
+                  mode="determinate"
+                  value="{{ stat.base_stat }}"
+                ></mat-progress-bar>
+              </div>
+            </div></div
+        ></mat-tab>
+        <mat-tab label="Evoluções"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </section>
+  </main>
+</section>

@@ -5,6 +5,7 @@ import Stat from './stat';
 import Type from './type';
 export class Pokemon {
   id: number;
+  base_experience: number;
   order: number;
   name: string;
   height: number;

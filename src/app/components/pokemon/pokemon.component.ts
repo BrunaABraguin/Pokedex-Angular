@@ -2,7 +2,7 @@ import { PokemonService } from './../../shared/services/pokemon.service';
 import { Pokemon } from './../../shared/models/pokemon';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonComponent implements OnInit {
   pokemon: Pokemon;
+  pokemonImage = environment.pokemonImageURL;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class PokemonComponent implements OnInit {
 
       this.pokemonService.getPokemon(id).subscribe((data) => {
         this.pokemon = data;
+        console.log(this.pokemon);
       });
     });
   }

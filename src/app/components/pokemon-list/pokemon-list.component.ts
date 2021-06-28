@@ -1,4 +1,4 @@
-import { environment } from './../../../environments/environment.prod';
+import { environment } from './../../../environments/environment';
 import { PokemonService } from './../../shared/services/pokemon.service';
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/shared/models/pokemon';
