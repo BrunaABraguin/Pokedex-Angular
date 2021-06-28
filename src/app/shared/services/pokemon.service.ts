@@ -4,8 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PokemonList } from '../models/pokemon-list';
-const { pokeApiURL } = environment;
+const { pokeApiURL, pokemonEvolution, pokemonSpecies } = environment;
 import { map } from 'rxjs/operators';
+import EvolutionChain from '../models/evolutionChain';
+import Species from '../models/species';
 
 @Injectable({
   providedIn: 'root',
@@ -23,5 +25,13 @@ export class PokemonService {
 
   getPokemon(pokemon: number | string): Observable<Pokemon> {
     return this.httpClient.get<Pokemon>(`${pokeApiURL}pokemon/` + pokemon);
+  }
+
+  getEvolutions(url: string): Observable<EvolutionChain> {
+    return this.httpClient.get<EvolutionChain>(url);
+  }
+
+  getSpecies(name: string): Observable<Species> {
+    return this.httpClient.get<Species>(`${pokemonSpecies}` + name);
   }
 }

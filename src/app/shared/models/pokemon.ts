@@ -10,7 +10,7 @@ export class Pokemon {
   name: string;
   height: number;
   abilities: Ability[];
-  spices: Specie;
+  species: Specie;
   types: Type[];
   weight: number;
   sprites: Sprite;
@@ -21,6 +21,3 @@ export class Pokemon {
     this.types = [];
   }
 }
-
-
-

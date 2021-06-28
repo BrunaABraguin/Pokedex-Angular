@@ -3,6 +3,8 @@ import { Pokemon } from './../../shared/models/pokemon';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import EvolutionChain from 'src/app/shared/models/evolutionChain';
+import Species from 'src/app/shared/models/species';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -11,6 +13,8 @@ import { environment } from 'src/environments/environment';
 export class PokemonComponent implements OnInit {
   pokemon: Pokemon;
   pokemonImage = environment.pokemonImageURL;
+  evolutionChain: EvolutionChain;
+  species: Species;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,7 +31,19 @@ export class PokemonComponent implements OnInit {
 
       this.pokemonService.getPokemon(id).subscribe((data) => {
         this.pokemon = data;
-        console.log(this.pokemon);
+        this.pokemonService.getSpecies(this.pokemon.name).subscribe((data) => {
+          this.species = data;
+
+          console.log(this.species);
+
+          this.pokemonService
+            .getEvolutions(this.species.evolution_chain.url)
+            .subscribe((data) => {
+              this.evolutionChain = data;
+
+              console.log(this.evolutionChain);
+            });
+        });
       });
     });
   }
